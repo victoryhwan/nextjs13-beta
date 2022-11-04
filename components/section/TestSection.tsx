@@ -1,5 +1,4 @@
 
-
 async function getData() {
     const res = await fetch('http://localhost:3000/api/user/1', { cache: 'no-store' });
     return res.json();

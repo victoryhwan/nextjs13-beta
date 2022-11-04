@@ -1,9 +1,11 @@
 
-'use Client'
+"use Client"
+
 import { useEffect, Suspense} from "react"
 import { use } from 'react';
 import useSWR from 'swr'
 import TestSection from '../../../components/section/TestSection'
+import Spinner from '../../../components/Spinner'
 
 async function getData() {
     const res = await fetch('http://localhost:3000/api/user/1', { cache: 'no-store' });
@@ -36,7 +38,7 @@ export default function Blog() {
     return (
       <div className="text-black">
           {/* /blog */}
-          <Suspense fallback={<div>TestSection loading....</div>}>
+          <Suspense fallback={ <Spinner />}>
             {/* @ts-ignore */}
             <TestSection/>
           </Suspense>
