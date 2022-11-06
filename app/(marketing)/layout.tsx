@@ -1,6 +1,6 @@
 import '../globals.css'
 import Header from '../../components/common/Header'
-import { Suspense, useEffect } from "react";
+import { Suspense } from "react";
 
 async function getData() {
   const res = await fetch('http://localhost:3000/api/hello');
@@ -17,10 +17,13 @@ export default async function MarketingLayout({ children }: {
   // console.log(user)
   return (
     <>
-        <Suspense fallback={<div>Loading...</div>}>
+        {/* <Suspense fallback={<div>Loading...</div>}>
           <Header/>
-        </Suspense>
-        <section className='bg-white h-[500px]'>{children}</section>
+        </Suspense> */}
+        <section className=''>
+          <div className='text-black'>/(marketing)/layout.tsx</div>
+          {children}
+        </section>
     </>
   )
 }

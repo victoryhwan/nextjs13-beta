@@ -1,7 +1,7 @@
 
-"use Client"
+// "use client"
 
-import { useEffect, Suspense} from "react"
+import { Suspense} from "react"
 import { use } from 'react';
 import useSWR from 'swr'
 import TestSection from '../../../components/section/TestSection'
@@ -36,8 +36,8 @@ export default function Blog() {
     // })
 
     return (
-      <div className="text-black">
-          {/* /blog */}
+      <div className="text-black bg-green-100">
+          <h2>/(marketing)/blog/page.tsx, blog page</h2>
           <Suspense fallback={ <Spinner />}>
             {/* @ts-ignore */}
             <TestSection/>

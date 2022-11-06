@@ -4,7 +4,13 @@ import { useEffect, Suspense, useState} from "react"
 import Spinner from '../Spinner'
 
 async function getData() {
-    const res = await fetch('http://localhost:3000/api/user/1', { cache: 'no-store' });
+    const res = await fetch('http://localhost:3000/api/user/1', 
+    { 
+        // cache: 'no-store' //getServerSideProps
+        cache: 'force-cache' //getStaticProps
+        // next: { revalidate:10} //getStaticProps
+    }
+    );
     return res.json();
 }
 interface User{
