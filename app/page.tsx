@@ -6,9 +6,9 @@ import Header from '../components/common/Header'
 export default function Home() {
   return (
     <>
-      <Suspense fallback={<div>Loading...</div>}>
+      {/* <Suspense fallback={<div>Loading...</div>}>
           <Header/>
-      </Suspense>
+      </Suspense> */}
       <section className=''>
         <div className='text-black'>/page.tsx ,Root Page</div>
       </section>
