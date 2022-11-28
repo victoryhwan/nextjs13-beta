@@ -1,6 +1,8 @@
 
+const mainUrl = process.env.MAIN_URL
+
 async function getData() {
-    const res = await fetch('http://localhost:3000/api/user/1', { cache: 'no-store' });
+    const res = await fetch(`${mainUrl}/api/user/1`, { cache: 'no-store' });
     return res.json();
 }
 
