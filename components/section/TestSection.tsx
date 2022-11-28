@@ -1,8 +1,10 @@
 
-const mainUrl = process.env.MAIN_URL
+const mainUrl = process.env.NEXT_PUBLIC_API_URL
 
 async function getData() {
-    const res = await fetch(`${mainUrl}/api/user/1`, { cache: 'no-store' });
+    let reqUrl = `${mainUrl}/api/user/1`
+    // console.log(`TestSection reqUrl:${reqUrl}`)
+    const res = await fetch(reqUrl, { cache: 'no-store' });
     return res.json();
 }
 

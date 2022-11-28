@@ -3,10 +3,12 @@ import { use } from 'react';
 import { useEffect, Suspense, useState} from "react"
 import Spinner from '../Spinner'
 
-const mainUrl = process.env.MAIN_URL
+const mainUrl = process.env.NEXT_PUBLIC_API_URL
 
 async function getData() {
-    const res = await fetch(`${mainUrl}/api/user/1`, 
+    let reqUrl = `${mainUrl}/api/user/1`
+    // console.log(`TestSectionClient reqUrl:${reqUrl}`)
+    const res = await fetch(reqUrl, 
     { 
         // cache: 'no-store' //getServerSideProps
         cache: 'force-cache' //getStaticProps
